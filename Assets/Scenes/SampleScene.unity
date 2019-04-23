@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10544608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -21.46, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 936564227}
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc2ab8f25697d545b251447828dc88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mascot: {fileID: 936564232}
+  isInTunnel: {fileID: 11400000, guid: e65e78c11c7887d418f54753377e7f85, type: 2}
   windStrength: 75
   resizeSpeed: 10
   minHeight: 2
@@ -515,10 +515,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDeath: {fileID: 11400000, guid: e018ff807ce1c6740bda3f0b2f43d331, type: 2}
   fallSpeedFactor: 2
-  fallingAirResistance: 1
-  risingAirResistance: 5
+  fallingAirResistance: 2.5
+  risingAirResistance: 7.5
   fallingTunnelAirResistance: 2
   risingTunnelAirResistance: 1
+  isInTunnel: {fileID: 11400000, guid: e65e78c11c7887d418f54753377e7f85, type: 2}
 --- !u!1 &1602876029
 GameObject:
   m_ObjectHideFlags: 0
