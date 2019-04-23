@@ -6,6 +6,7 @@ public class Updraft : MonoBehaviour
 {
     BoxCollider windbox;
     float startingHeight;
+    [SerializeField] CustomBool isInTunnel;
 
     [SerializeField] float windStrength = 0f;
     [SerializeField] float resizeSpeed = 0f;
@@ -52,6 +53,15 @@ public class Updraft : MonoBehaviour
         rb.AddForce(Vector3.up * windStrength, ForceMode.Force);
     }
 
+    void OnTriggerEnter()
+    {
+        isInTunnel.value = true;
+    }
+
+    void OnTriggerExit()
+    {
+        isInTunnel.value = false;
+    }
     void AdjustSize()
     {
         float nextScale = transform.localScale.y + 

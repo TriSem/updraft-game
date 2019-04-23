@@ -5,14 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
-    // Amount of seconds that are rewound if
-    // the player gets hit.
-    // [SerializeField] CustomInt secondsToRewind;
-    // [SerializeField] CustomInt playerRemainingLives;
-    // [SerializeField] EnemyRecorder enemyRecorder;
-
-    // bool gameHalted = false;
-
     void Awake()
     {
         BeginNewLevel();
