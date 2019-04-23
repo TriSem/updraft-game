@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 10cf7b64d62d45949a90b3c20455ba16
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - secondsToRewind: {fileID: 11400000, guid: 13bcb03b2c3759e4a9638ca9c93266b8, type: 2}
+  - playerRemainingLives: {fileID: 11400000, guid: 8d27094dd14a9ef4cacceb1450797f8e,
+      type: 2}
+  - enemyRecorder: {fileID: 11400000, guid: 678e5ab35e37671428133c504be4e915, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
