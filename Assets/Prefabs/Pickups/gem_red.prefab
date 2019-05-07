@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7050286360397313068}
   - component: {fileID: 3669078532933847253}
   - component: {fileID: 1212703984073535873}
-  m_Layer: 0
-  m_Name: gem_small
+  - component: {fileID: 5650477653901519443}
+  m_Layer: 10
+  m_Name: gem_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,5 +91,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14901e87f708f674c986f7dbfc34094a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: {fileID: 0}
+  playerScore: {fileID: 11400000, guid: 8d27094dd14a9ef4cacceb1450797f8e, type: 2}
   value: 5
+--- !u!64 &5650477653901519443
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087210332324281353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2401994324257950250, guid: 63c518fdb1217cd408281e9c10c5f6bf, type: 3}

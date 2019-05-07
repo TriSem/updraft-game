@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    AsyncOperation async = null;
-    [SerializeField] StringSO selectedLevelDesignation;
-    [SerializeField] BoolSO controlsEnabled;  
+    [SerializeField] GameState target = null;
+    [SerializeField] GameObject loadScreen = null;
+    [SerializeField] StringSO selectedLevelDesignation = null;
+    [SerializeField] BoolSO controlsEnabled = null;  
 
     string currentlyLoadedLevel = "";
 
     void Start()
     {
-        StartCoroutine(LoadLevelSelect());
+        if(!(SceneManager.sceneCount > 1 && Application.isEditor))
+        {
+            loadScreen.SetActive(true);
+            StartCoroutine(LoadLevelSelect());
+            loadScreen.SetActive(false);
+        }
         currentlyLoadedLevel = "LevelSelection";
     }
 
@@ -34,8 +40,10 @@ public class Level : MonoBehaviour
             }
         }
 
-        async = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
+        var async = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         yield return async;
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
     }
 
     IEnumerator UnloadLevel(string levelName)
@@ -54,14 +62,29 @@ public class Level : MonoBehaviour
         yield return SceneManager.UnloadSceneAsync(levelName);
     }
 
+    void Load(string levelName)
+    {
+        loadScreen.SetActive(true);
+        target.gameObject.SetActive(false);
+        controlsEnabled.value = false;
+        StartCoroutine(UnloadLevel(currentlyLoadedLevel));
+        StartCoroutine(LoadLevel(levelName));
+        currentlyLoadedLevel = levelName;
+        loadScreen.SetActive(false);
+        controlsEnabled.value = true;
+        target.gameObject.SetActive(true);
+    }
+
     public void OnLevelSelected()
     {
         if(selectedLevelDesignation.value == "")
             return;
+        
+        Load("Level " + selectedLevelDesignation);
+    }
 
-        controlsEnabled.value = false;
-        StartCoroutine(UnloadLevel(currentlyLoadedLevel));
-        StartCoroutine(LoadLevel("Level " + selectedLevelDesignation.value ));
-        controlsEnabled.value = true;
+    public void OnPlayerDeath()
+    {
+        Load("LevelSelection");
     }
 }

@@ -6,23 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameState : MonoBehaviour
 {
     Scene currentLevel;
+    [SerializeField] IntSO playerScore = null;
 
-    BoolSO controlsEnabled = null;
-    IntSO playerScore = null;
-
-    List<Enemy> enemies;
-
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        enemies = new List<Enemy>();
-        var enemiesObject = GameObject.Find("Enemies");
-        if(enemiesObject.transform.childCount > 0)
-        {
-            enemies.AddRange(
-                enemiesObject.transform.GetComponentsInChildren<Enemy>()
-            );
-        }
+        BeginPlay();
     }
 
     public void BeginPlay()
