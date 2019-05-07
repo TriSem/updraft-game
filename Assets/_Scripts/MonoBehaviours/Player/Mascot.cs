@@ -12,7 +12,7 @@ public class Mascot : MonoBehaviour
     [SerializeField] float fallingTunnelAirResistance = 0f;
     [SerializeField] float risingTunnelAirResistance = 0f;
 
-    [SerializeField] CustomBool isInTunnel;
+    [SerializeField] BoolSO isInTunnel;
 
     new Rigidbody rigidbody;
 
