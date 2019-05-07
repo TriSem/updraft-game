@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc2ab8f25697d545b251447828dc88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mascot: {fileID: 936564232}
+  isInTunnel: {fileID: 11400000, guid: e65e78c11c7887d418f54753377e7f85, type: 2}
   windStrength: 75
   resizeSpeed: 10
   minHeight: 2
@@ -519,6 +519,7 @@ MonoBehaviour:
   risingAirResistance: 5
   fallingTunnelAirResistance: 2
   risingTunnelAirResistance: 1
+  isInTunnel: {fileID: 11400000, guid: e65e78c11c7887d418f54753377e7f85, type: 2}
 --- !u!1 &1602876029
 GameObject:
   m_ObjectHideFlags: 0
