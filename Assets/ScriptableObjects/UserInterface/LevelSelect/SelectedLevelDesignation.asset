@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c6f532290a2b743942ef8f5ec2cbb1, type: 3}
-  m_Name: SecondsToRewind
+  m_Script: {fileID: 11500000, guid: 9f68a2e20ac584b4cbcdc039b41b83a5, type: 3}
+  m_Name: SelectedLevelDesignation
   m_EditorClassIdentifier: 
-  value: 5
+  value: 

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eed75950c71b8c4ea9e34d47057d772, type: 3}
-  m_Name: EnemyRecorder
+  m_Script: {fileID: 11500000, guid: 0a908ffaa9e74b246a202b8413ad667f, type: 3}
+  m_Name: OnLevelSelected
   m_EditorClassIdentifier: 
