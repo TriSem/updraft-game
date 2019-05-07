@@ -6,30 +6,31 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
     AsyncOperation async = null;
+    StringSO selectedLevelDesignation;
 
     void Start()
     {
         StartCoroutine(LoadLevelSelect());
     }
 
-    void Update()
+    IEnumerator LoadLevelSelect()
     {
-        
+        yield return LoadLevel("LevelSelect");
     }
 
-    IEnumerator LoadLevelSelect()
+    IEnumerator LoadLevel(string levelName)
     {
         if(Application.isEditor)
         {
             int sceneCount = SceneManager.sceneCount;
             for(int i = sceneCount - 1; i >= 0; i--)
             {
-                if(SceneManager.GetSceneAt(i).name == "LevelSelection")
-                yield break;
+                if(SceneManager.GetSceneAt(i).name == levelName)
+                    yield break;
             }
         }
 
-        async = SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Additive);
+        async = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         yield return async;
     }
 
