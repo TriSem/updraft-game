@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] CustomInt playerScore = null;
+    [SerializeField] IntSO playerScore = null;
 
     [SerializeField] int value = 0;
 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c6f532290a2b743942ef8f5ec2cbb1, type: 3}
   m_Name: PlayerRemainingLives
   m_EditorClassIdentifier: 
-  value: 3
+  value: 0

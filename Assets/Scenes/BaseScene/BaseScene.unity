@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: cf8f09d423c77e442b0ff6fab58d9dfe,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -153,7 +154,18 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: cf08ada27589d434c95063cdbb89b20d, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1183592258}
+        m_MethodName: OnLevelSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1183592258
@@ -168,6 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015fa4599ef6fc74990b6464ba12aee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedLevelDesignation: {fileID: 11400000, guid: 5d00a9da567da844d948b4e086a96166,
+    type: 2}
+  controlsEnabled: {fileID: 11400000, guid: c5bc34b3c439d8c4c8707547e02df89c, type: 2}
 --- !u!4 &1183592259
 Transform:
   m_ObjectHideFlags: 0
@@ -199,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1602876030
 MonoBehaviour:
   m_ObjectHideFlags: 0

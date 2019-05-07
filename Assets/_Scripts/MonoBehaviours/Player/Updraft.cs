@@ -6,7 +6,7 @@ public class Updraft : MonoBehaviour
 {
     BoxCollider windbox;
     float startingHeight;
-    [SerializeField] CustomBool isInTunnel = null;
+    [SerializeField] BoolSO isInTunnel = null;
 
     [SerializeField] float windStrength = 0f;
     [SerializeField] float resizeSpeed = 0f;

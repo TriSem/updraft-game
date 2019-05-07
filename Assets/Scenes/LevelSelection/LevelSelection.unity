@@ -1302,7 +1302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 3
-  levelSelected: {fileID: 11400000, guid: cf08ada27589d434c95063cdbb89b20d, type: 2}
+  levelSelectedEvent: {fileID: 11400000, guid: cf08ada27589d434c95063cdbb89b20d, type: 2}
+  controlsEnabled: {fileID: 11400000, guid: c5bc34b3c439d8c4c8707547e02df89c, type: 2}
 --- !u!54 &1599907324
 Rigidbody:
   m_ObjectHideFlags: 0

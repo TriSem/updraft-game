@@ -8,7 +8,8 @@ public class LevelSelector : MonoBehaviour
 
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float turnSpeed = 1f;
-    [SerializeField] GameEvent levelSelected = null;
+    [SerializeField] GameEvent levelSelectedEvent = null;
+    [SerializeField] BoolSO controlsEnabled;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class LevelSelector : MonoBehaviour
     {
         if(Input.GetButtonDown("Submit"))
         {
-            levelSelected.NotifyListeners();
+            levelSelectedEvent.NotifyListeners();
         }
     }
 
