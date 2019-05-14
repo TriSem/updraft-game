@@ -6,15 +6,16 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     TextMeshProUGUI text;
+    [SerializeField] IntSO playerScore;
 
     void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "";
+        text.text = "0";
     }
 
-    public void OnScoreChanged(int score)
+    public void OnScoreChanged()
     {
-        text.text = score.ToString();
+        text.text = playerScore.value.ToString();
     }
 }

@@ -12,7 +12,7 @@ public class Pickup : MonoBehaviour
     void OnTriggerEnter()
     {
         playerScore.value += value;
-        playerScoreChange.NotifyListeners(playerScore.value);
+        playerScoreChange.NotifyListeners();
         Destroy(this.gameObject);
     }
 }

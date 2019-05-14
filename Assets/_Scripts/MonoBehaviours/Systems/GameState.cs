@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
-    Scene currentLevel;
     [SerializeField] IntSO playerScore = null;
+    [SerializeField] GameEvent playerScoreChange = null;
 
     void OnEnable()
     {
@@ -16,5 +16,11 @@ public class GameState : MonoBehaviour
     public void BeginPlay()
     {
         playerScore.value = 0;
+        playerScoreChange.NotifyListeners();
+    }
+
+    public void OnLevelCleared()
+    {
+        // TODO: Add functionality
     }
 }

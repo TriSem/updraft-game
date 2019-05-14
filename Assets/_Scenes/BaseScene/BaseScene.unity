@@ -548,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110f79647dc084649a7db4df8b6925b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScore: {fileID: 11400000, guid: 8d27094dd14a9ef4cacceb1450797f8e, type: 2}
 --- !u!114 &712509186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 712509185}
         m_MethodName: OnScoreChanged
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -754,6 +755,7 @@ GameObject:
   - component: {fileID: 1183592258}
   - component: {fileID: 1183592257}
   - component: {fileID: 1183592260}
+  - component: {fileID: 1183592261}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -850,6 +852,35 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1183592261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183592256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cc78330752134d8b82f520eb4bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1ada7f0f4e38cec4a91cbda83f49d39c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1183592258}
+        m_MethodName: OnLevelCleared
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1471714925
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602876031}
   - component: {fileID: 1602876030}
+  - component: {fileID: 1602876032}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -955,6 +987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: {fileID: 11400000, guid: 8d27094dd14a9ef4cacceb1450797f8e, type: 2}
+  playerScoreChange: {fileID: 11400000, guid: ab8b1a0967ce7dc42a90fda261abb6f0, type: 2}
 --- !u!4 &1602876031
 Transform:
   m_ObjectHideFlags: 0
@@ -969,3 +1002,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602876032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602876029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cc78330752134d8b82f520eb4bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1ada7f0f4e38cec4a91cbda83f49d39c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1602876030}
+        m_MethodName: OnLevelCleared
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: {fileID: 11400000, guid: 8d27094dd14a9ef4cacceb1450797f8e, type: 2}
+  playerScoreChange: {fileID: 11400000, guid: ab8b1a0967ce7dc42a90fda261abb6f0, type: 2}
   value: 20
 --- !u!64 &6917941893088688547
 MeshCollider:

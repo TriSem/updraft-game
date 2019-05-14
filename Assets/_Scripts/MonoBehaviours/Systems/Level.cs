@@ -87,4 +87,10 @@ public class Level : MonoBehaviour
     {
         Load("LevelSelection");
     }
+
+    public void OnLevelCleared()
+    {
+        // TODO: Add Scoreboard etc.
+        Load("LevelSelection");
+    }
 }
