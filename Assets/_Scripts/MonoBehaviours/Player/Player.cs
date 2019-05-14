@@ -13,9 +13,4 @@ public class Player : MonoBehaviour
     {
         transform.position += Vector3.right * speed * Time.deltaTime;
     }
-
-    public void OnDeath()
-    {
-        transform.position = Vector3.zero;
-    }
 }

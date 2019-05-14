@@ -5,31 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
-    void Awake()
+    [SerializeField] IntSO playerScore = null;
+    [SerializeField] GameEvent playerScoreChange = null;
+
+    void OnEnable()
     {
-        BeginNewLevel();
+        BeginPlay();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void BeginPlay()
     {
-        
+        playerScore.value = 0;
+        playerScoreChange.NotifyListeners();
     }
 
-    void BeginNewLevel()
-    {   
-        // Make sure that the scene containing the enemies
-        // is set as the active scene or this will throw an error.
-        GameObject enemies = GameObject.Find("Enemies");
-        
-        if(enemies.transform.childCount > 0)
-        {
-           
-        }
-    }
-
-    public void OnPlayerDeath()
+    public void OnLevelCleared()
     {
-        BeginNewLevel();
+        // TODO: Add functionality
     }
 }

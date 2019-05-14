@@ -12,7 +12,7 @@ public class Mascot : MonoBehaviour
     [SerializeField] float fallingTunnelAirResistance = 0f;
     [SerializeField] float risingTunnelAirResistance = 0f;
 
-    [SerializeField] BoolSO isInTunnel;
+    [SerializeField] BoolSO isInTunnel = null;
 
     new Rigidbody rigidbody;
 
@@ -48,6 +48,6 @@ public class Mascot : MonoBehaviour
 
     void Die()
     {
-        onDeath.Raise();
+        onDeath.NotifyListeners();
     }
 }
