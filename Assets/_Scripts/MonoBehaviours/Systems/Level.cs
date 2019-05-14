@@ -19,8 +19,9 @@ public class Level : MonoBehaviour
             loadScreen.SetActive(true);
             StartCoroutine(LoadLevelSelect());
             loadScreen.SetActive(false);
+            currentlyLoadedLevel = SceneManager.GetActiveScene().name;
         }
-        currentlyLoadedLevel = SceneManager.GetActiveScene().name;
+        currentlyLoadedLevel = "LevelSelection";
     }
 
     IEnumerator LoadLevelSelect()

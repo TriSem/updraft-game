@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void PlayGame()
+    IEnumerator LoadGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return SceneManager.LoadSceneAsync("BaseScene");
+        yield return SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("LevelSelection"));
+    }
+
+    public void PlayGame()
+    {
+        StartCoroutine(LoadGame());
     }
 
     public void QuitGame()
