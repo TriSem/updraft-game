@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Assets/Numbers/Float")]
-public class CustomFloat : ScriptableObject
+public class FloatSO : ScriptableObject
 {
     public float value;
 }

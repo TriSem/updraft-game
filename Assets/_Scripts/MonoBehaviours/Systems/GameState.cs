@@ -13,7 +13,7 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // InvokeRepeating("RecordGameState", 1f, 1f);
+        
     }
 
     void BeginNewLevel()
@@ -24,34 +24,12 @@ public class GameState : MonoBehaviour
         
         if(enemies.transform.childCount > 0)
         {
-            // enemyRecorder.Initialize(
-            //     enemies.GetComponentsInChildren<Transform>(),
-            //     secondsToRewind.value);
+           
         }
     }
-
-    // void RecordGameState()
-    // {
-    //     if(enemyRecorder.Initialized)
-    //         enemyRecorder.SaveEnemyStates();
-    // }
 
     public void OnPlayerDeath()
     {
         BeginNewLevel();
     }
-
-    // IEnumerator Rewind()
-    // {
-    //     gameHalted = true;
-    //     enemyRecorder.DisableColliders(true);
-    //     for(int i = 1; i <= secondsToRewind.value; i++)
-    //     {
-    //         enemyRecorder.Rewind(i);
-    //         yield return new WaitForSeconds(0.1f);
-    //     }
-
-    //     enemyRecorder.DisableColliders(false);
-    //     gameHalted = false;
-    // }
 }
