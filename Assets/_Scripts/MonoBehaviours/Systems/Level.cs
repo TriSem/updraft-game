@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
             StartCoroutine(LoadLevelSelect());
             loadScreen.SetActive(false);
         }
-        currentlyLoadedLevel = "LevelSelection";
+        currentlyLoadedLevel = SceneManager.GetActiveScene().name;
     }
 
     IEnumerator LoadLevelSelect()
@@ -79,8 +79,8 @@ public class Level : MonoBehaviour
     {
         if(selectedLevelDesignation.value == "")
             return;
-        
-        Load("Level " + selectedLevelDesignation);
+
+        Load("Level " + selectedLevelDesignation.value);
     }
 
     public void OnPlayerDeath()
