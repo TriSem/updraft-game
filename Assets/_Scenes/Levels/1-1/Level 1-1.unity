@@ -611,5 +611,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6754155101599131188, guid: 15f0d03c18301ca48b0c1491fe9b6feb,
+        type: 3}
+      propertyPath: m_Name
+      value: Mascot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290013279407940546, guid: 15f0d03c18301ca48b0c1491fe9b6feb,
+        type: 3}
+      propertyPath: location
+      value: 
+      objectReference: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f0d03c18301ca48b0c1491fe9b6feb, type: 3}
