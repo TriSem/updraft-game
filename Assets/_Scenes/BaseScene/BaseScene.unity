@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015fa4599ef6fc74990b6464ba12aee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1602876030}
+  gameState: {fileID: 1602876030}
   loadScreen: {fileID: 13550559}
   selectedLevelDesignation: {fileID: 11400000, guid: 5d00a9da567da844d948b4e086a96166,
     type: 2}

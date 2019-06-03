@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] GameState target = null;
+    [SerializeField] GameState gameState = null;
     [SerializeField] GameObject loadScreen = null;
     [SerializeField] StringSO selectedLevelDesignation = null;
     [SerializeField] BoolSO controlsEnabled = null;  
@@ -14,14 +14,14 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        if(!(SceneManager.sceneCount > 1 && Application.isEditor))
+        if(SceneManager.sceneCount > 1 && Application.isEditor)
         {
-            loadScreen.SetActive(true);
-            StartCoroutine(LoadLevelSelect());
-            loadScreen.SetActive(false);
             currentlyLoadedLevel = SceneManager.GetActiveScene().name;
+            return;
         }
-        currentlyLoadedLevel = "LevelSelection";
+        
+        StartCoroutine(LoadLevelSelect());
+        currentlyLoadedLevel = SceneManager.GetActiveScene().name;
     }
 
     IEnumerator LoadLevelSelect()
@@ -66,14 +66,14 @@ public class Level : MonoBehaviour
     void Load(string levelName)
     {
         loadScreen.SetActive(true);
-        target.gameObject.SetActive(false);
+        gameState.gameObject.SetActive(false);
         controlsEnabled.value = false;
         StartCoroutine(UnloadLevel(currentlyLoadedLevel));
         StartCoroutine(LoadLevel(levelName));
         currentlyLoadedLevel = levelName;
         loadScreen.SetActive(false);
         controlsEnabled.value = true;
-        target.gameObject.SetActive(true);
+        gameState.gameObject.SetActive(true);
     }
 
     public void OnLevelSelected()
