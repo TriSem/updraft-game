@@ -14,12 +14,14 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        if(!(SceneManager.sceneCount > 1 && Application.isEditor))
+        if(SceneManager.sceneCount > 1 && Application.isEditor)
         {
-            StartCoroutine(LoadLevelSelect());
             currentlyLoadedLevel = SceneManager.GetActiveScene().name;
+            return;
         }
-        currentlyLoadedLevel = "LevelSelection";
+        
+        StartCoroutine(LoadLevelSelect());
+        currentlyLoadedLevel = SceneManager.GetActiveScene().name;
     }
 
     IEnumerator LoadLevelSelect()
