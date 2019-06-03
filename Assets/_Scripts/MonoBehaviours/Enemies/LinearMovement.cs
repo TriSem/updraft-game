@@ -13,7 +13,6 @@ public class LinearMovement : MonoBehaviour
     void Start()
     {
         AlignToDirection();
-        direction.Normalize();
     }
 
     // Update is called once per frame
@@ -31,6 +30,6 @@ public class LinearMovement : MonoBehaviour
     protected void AlignToDirection() => transform.right = direction;
 
     // Moves in a straight line.
-    protected void Move() => transform.position += direction * speed * Time.deltaTime;
+    protected void Move() => transform.position += direction.normalized * speed * Time.deltaTime;
     
 }
