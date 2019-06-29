@@ -6,7 +6,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     TextMeshProUGUI text;
-    [SerializeField] IntSO playerScore;
+    [SerializeField] IntSO playerScore = null;
 
     void Awake()
     {
