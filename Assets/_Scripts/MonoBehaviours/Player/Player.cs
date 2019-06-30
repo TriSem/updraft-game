@@ -6,16 +6,31 @@ public class Player : MonoBehaviour
 {
     GameEventListener listener;
 
-    [SerializeField] float speed = 3f;
+    [SerializeField] float maxSpeed = 6f;
+    [SerializeField] float minSpeed = 1f;
+    [SerializeField] float startingSpeed = 3f;
+    [SerializeField] float rateOfChange = 1f;
+
+    float speed;
+
+    void Start()
+    {
+        speed = startingSpeed;    
+    } 
 
     // Update is called once per frame
     void Update()
     {
+        ChangeSpeed();
         transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
-    public void OnDeath()
+
+    void ChangeSpeed()
     {
-        transform.position = Vector3.zero;
+        float accelDirection = Input.GetAxisRaw("Horizontal");
+
+        speed += accelDirection * rateOfChange;
+        speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
     }
 }

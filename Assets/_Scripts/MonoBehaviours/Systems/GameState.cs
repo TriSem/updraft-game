@@ -5,61 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
-    // Amount of seconds that are rewound if
-    // the player gets hit.
-    // [SerializeField] CustomInt secondsToRewind;
-    // [SerializeField] CustomInt playerRemainingLives;
-    // [SerializeField] EnemyRecorder enemyRecorder;
+    [SerializeField] IntSO playerScore = null;
+    [SerializeField] GameEvent playerScoreChange = null;
 
-    // bool gameHalted = false;
-
-    void Awake()
+    void OnEnable()
     {
-        BeginNewLevel();
+        BeginPlay();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void BeginPlay()
     {
-        // InvokeRepeating("RecordGameState", 1f, 1f);
+        playerScore.value = 0;
+        playerScoreChange.NotifyListeners();
     }
 
-    void BeginNewLevel()
-    {   
-        // Make sure that the scene containing the enemies
-        // is set as the active scene or this will throw an error.
-        GameObject enemies = GameObject.Find("Enemies");
-        
-        if(enemies.transform.childCount > 0)
-        {
-            // enemyRecorder.Initialize(
-            //     enemies.GetComponentsInChildren<Transform>(),
-            //     secondsToRewind.value);
-        }
-    }
-
-    // void RecordGameState()
-    // {
-    //     if(enemyRecorder.Initialized)
-    //         enemyRecorder.SaveEnemyStates();
-    // }
-
-    public void OnPlayerDeath()
+    public void OnLevelCleared()
     {
-        BeginNewLevel();
+        // TODO: Add functionality
     }
-
-    // IEnumerator Rewind()
-    // {
-    //     gameHalted = true;
-    //     enemyRecorder.DisableColliders(true);
-    //     for(int i = 1; i <= secondsToRewind.value; i++)
-    //     {
-    //         enemyRecorder.Rewind(i);
-    //         yield return new WaitForSeconds(0.1f);
-    //     }
-
-    //     enemyRecorder.DisableColliders(false);
-    //     gameHalted = false;
-    // }
 }

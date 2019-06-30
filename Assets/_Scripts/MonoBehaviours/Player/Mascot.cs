@@ -9,12 +9,19 @@ public class Mascot : MonoBehaviour
     [SerializeField] float fallSpeedFactor = 0f;
     [SerializeField] float fallingAirResistance = 0f;
     [SerializeField] float risingAirResistance = 0f;
+    [SerializeField] float fallingTunnelAirResistance = 0f;
+    [SerializeField] float risingTunnelAirResistance = 0f;
+
+    [SerializeField] BoolSO isInTunnel = null;
+    [SerializeField] MascotLocation location = null;
 
     new Rigidbody rigidbody;
+
 
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        location.SetMascotPosition(this);
     }
 
     void LateUpdate()
@@ -22,15 +29,18 @@ public class Mascot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X))
             Die();
 
+
         if(rigidbody.velocity.y < 0)
         {
-            rigidbody.drag = fallingAirResistance;
+            rigidbody.drag = isInTunnel.value ? fallingTunnelAirResistance : fallingAirResistance;
             rigidbody.velocity += fallSpeedFactor * Vector3.up * Time.deltaTime * Physics.gravity.y;
         }
         else
         {
-            rigidbody.drag = risingAirResistance;
+            rigidbody.drag = isInTunnel.value ? risingTunnelAirResistance : risingAirResistance;
         }
+
+        location.SetMascotPosition(this);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -42,6 +52,6 @@ public class Mascot : MonoBehaviour
 
     void Die()
     {
-        onDeath.Raise();
+        onDeath.NotifyListeners();
     }
 }
