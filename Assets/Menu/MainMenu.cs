@@ -8,8 +8,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadGame()
     {
         yield return SceneManager.LoadSceneAsync("BaseScene");
-        yield return SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("LevelSelection"));
+        // SceneManager.SetActiveScene(SceneManager.GetSceneByName("LevelSelection"));
     }
 
     public void PlayGame()
