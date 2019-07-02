@@ -4,7 +4,7 @@ using UnityEngine;
 
 public sealed class HomingMovement : LinearMovement
 {
-    [SerializeField] MascotLocation mascotLocation = null;
+    [SerializeField] MascotPosition mascotPosition = null;
     [Range(0f, 1f)]
     [SerializeField] float lerpFactor = 0f;
 
@@ -26,7 +26,7 @@ public sealed class HomingMovement : LinearMovement
     // Stops homing once it has passed them.
     void AdjustTrajectory()
     {
-        var targetPositition = mascotLocation.MascotPosition;
+        var targetPositition = mascotPosition.Position;
         if(targetPositition.x > transform.position.x * Mathf.Sign(direction.x))
         {
             var towardsPlayer = targetPositition - transform.position;
