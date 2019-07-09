@@ -11,18 +11,18 @@ public class Player : MonoBehaviour
     [SerializeField] float startingSpeed = 3f;
     [SerializeField] float rateOfChange = 1f;
 
-    float speed;
+    public float Speed { get; private set; }
 
     void Start()
     {
-        speed = startingSpeed;    
+        Speed = startingSpeed;    
     } 
 
     // Update is called once per frame
     void Update()
     {
         ChangeSpeed();
-        transform.position += Vector3.right * speed * Time.deltaTime;
+        transform.position += Vector3.right * Speed * Time.deltaTime;
     }
 
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     {
         float accelDirection = Input.GetAxisRaw("Horizontal");
 
-        speed += accelDirection * rateOfChange;
-        speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
+        Speed += accelDirection * rateOfChange;
+        Speed = Mathf.Clamp(Speed, minSpeed, maxSpeed);
     }
 }
