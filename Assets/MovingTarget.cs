@@ -7,7 +7,7 @@ public class MovingTarget : MonoBehaviour
     // Transforms to act as start and end markers for the journey.
     public Transform startMarker;
     public Transform endMarker;
-
+    
     // Movement speed in units/sec.
     public float speed = 1.0F;
 
@@ -36,7 +36,8 @@ public class MovingTarget : MonoBehaviour
         // Set our position as a fraction of the distance between the markers. 
         Target.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, pingPong);
 
-    
+        
     }
+
 
 }
