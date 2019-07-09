@@ -22,7 +22,7 @@ public class torusCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (firstHit)
+        if (firstHit.value)
         {
             firstHit.value = false;
             Debug.Log("Torus Hit! Points=" + points.value);
