@@ -19,6 +19,8 @@ public class MovingTarget : MonoBehaviour
     // Total distance between the markers.
     private float journeyLength;
 
+    public BoolSO firstHit = null;
+
     void Start()
     {
         // Keep a note of the time the movement started.
@@ -36,7 +38,10 @@ public class MovingTarget : MonoBehaviour
         // Set our position as a fraction of the distance between the markers. 
         Target.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, pingPong);
 
-        
+        if (!firstHit.value)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 

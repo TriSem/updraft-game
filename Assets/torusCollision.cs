@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class torusCollision : MonoBehaviour
 {
-
+    public IntSO playerScore = null;
+    public GameEvent playerScoreChange = null;
     public BoolSO firstHit = null;
     public IntSO points = null;
 
@@ -25,6 +26,8 @@ public class torusCollision : MonoBehaviour
         if (firstHit.value)
         {
             firstHit.value = false;
+            playerScore.value += points.value;
+            playerScoreChange.NotifyListeners();
             Debug.Log("Torus Hit! Points=" + points.value);
         }
     }
