@@ -7,12 +7,12 @@ public class torusCollision : MonoBehaviour
     public IntSO playerScore = null;
     public GameEvent playerScoreChange = null;
     public BoolSO firstHit = null;
-    public IntSO points = null;
+    public int points;
 
     // Start is called before the first frame update
     void Start()
     {
-        firstHit.value = true;
+        firstHit.value = false;
     }
 
     // Update is called once per frame
@@ -23,12 +23,12 @@ public class torusCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (firstHit.value)
+        if (!firstHit.value)
         {
-            firstHit.value = false;
-            playerScore.value += points.value;
+            firstHit.value = true;
+            playerScore.value += points;
             playerScoreChange.NotifyListeners();
-            Debug.Log("Torus Hit! Points=" + points.value);
+            //Debug.Log("Torus Hit! Points=" + points);
         }
     }
 }

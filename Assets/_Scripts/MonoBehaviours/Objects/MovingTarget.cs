@@ -38,7 +38,7 @@ public class MovingTarget : MonoBehaviour
         // Set our position as a fraction of the distance between the markers. 
         Target.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, pingPong);
 
-        if (!firstHit.value)
+        if (firstHit.value)
         {
             Destroy(this.gameObject);
         }
