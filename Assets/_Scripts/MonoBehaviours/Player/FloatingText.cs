@@ -8,27 +8,17 @@ public class FloatingText : MonoBehaviour
     //public StringSO currentColor = null;
 
     //public GameObject pickupPrefab;
-    public float destroyTime = 1f;
-    public string points;
+    [SerializeField] float destroyTime = 1f;
+    [SerializeField] int points = 0;
+    [SerializeField] IntSO comboIterator = null;
     Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         anim.Play("FloatingText");
-        GetComponent<TextMesh>().text = points;
+        GetComponent<TextMesh>().text = comboIterator.value.ToString() + " X " +  points.ToString() ;
         Destroy(gameObject, destroyTime);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void showFloatingText()
-    {
-        
-        //Debug.Log(currentColor.value + " " + currentPoints.value);
     }
 }

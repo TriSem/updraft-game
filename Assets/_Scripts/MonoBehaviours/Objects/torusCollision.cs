@@ -8,6 +8,7 @@ public class torusCollision : MonoBehaviour
     public GameEvent playerScoreChange = null;
     public BoolSO firstHit = null;
     public GameObject floatingTextPrefab;
+    public int points = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class torusCollision : MonoBehaviour
             }
            
             firstHit.value = true;
+            playerScore.value += points;
             playerScoreChange.NotifyListeners();
             //Debug.Log("Torus Hit! Points=" + points);
         }
