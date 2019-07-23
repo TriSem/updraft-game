@@ -21,6 +21,7 @@ public class MovingTarget : MonoBehaviour
 
     public BoolSO firstHit = null;
 
+
     void Start()
     {
         // Keep a note of the time the movement started.
