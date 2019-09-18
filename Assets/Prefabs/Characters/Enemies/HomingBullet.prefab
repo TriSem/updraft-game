@@ -30,23 +30,6 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 0
   m_Center: {x: 0.7, y: 0, z: 0}
---- !u!114 &3014825765375969173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6535891365249710955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc2f4f91e5aede14b80ee88723794020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0, z: 0}
-  speed: 4
-  gizmoLength: 4
-  mascotLocation: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9, type: 2}
-  lerpFactor: 0.15
 --- !u!198 &1898768955765830754
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4767,6 +4750,23 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3014825765375969173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535891365249710955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2f4f91e5aede14b80ee88723794020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: 0, z: 0}
+  speed: 4
+  gizmoLength: 4
+  mascotPosition: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9, type: 2}
+  lerpFactor: 0.15
 --- !u!1001 &2996524907804697186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4846,7 +4846,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 2c756a24f6b95fb45a03ae6adb918635,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 2c756a24f6b95fb45a03ae6adb918635,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07abf49a0784eb34fa554871f550717b, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 2c756a24f6b95fb45a03ae6adb918635,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 07abf49a0784eb34fa554871f550717b, type: 2}
     m_RemovedComponents: []

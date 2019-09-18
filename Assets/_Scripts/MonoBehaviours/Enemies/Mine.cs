@@ -11,7 +11,7 @@ public class Mine : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        Vector3 torque = Random.rotation.eulerAngles;
+        Vector3 torque = Random.rotation.eulerAngles * 0.5f;
         rigidbody.AddTorque(torque);    
     }
 }

@@ -4762,7 +4762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84382e3ba7b6ba47a4b69b02d4ad32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
+  direction: {x: -1, y: 0, z: 0}
   speed: 5
   gizmoLength: 4
 --- !u!1001 &34021263167382491
@@ -4805,17 +4805,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2c756a24f6b95fb45a03ae6adb918635,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c756a24f6b95fb45a03ae6adb918635,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c756a24f6b95fb45a03ae6adb918635,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c756a24f6b95fb45a03ae6adb918635,
         type: 3}
@@ -4842,6 +4842,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 2c756a24f6b95fb45a03ae6adb918635,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 209de900c593b2545ab754052d074930, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c756a24f6b95fb45a03ae6adb918635, type: 3}
 --- !u!1 &8311730932829240018 stripped

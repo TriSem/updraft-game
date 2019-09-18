@@ -13,7 +13,7 @@ public class Mascot : MonoBehaviour
     [SerializeField] float risingTunnelAirResistance = 0f;
 
     [SerializeField] BoolSO isInTunnel = null;
-    [SerializeField] MascotLocation location = null;
+    [SerializeField] MascotPosition mascotPosition = null;
 
     new Rigidbody rigidbody;
 
@@ -21,7 +21,7 @@ public class Mascot : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
-        location.SetMascotPosition(this);
+        mascotPosition.SetMascotPosition(this);
     }
 
     void LateUpdate()
@@ -40,7 +40,7 @@ public class Mascot : MonoBehaviour
             rigidbody.drag = isInTunnel.value ? risingTunnelAirResistance : risingAirResistance;
         }
 
-        location.SetMascotPosition(this);
+        mascotPosition.SetMascotPosition(this);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -53,5 +53,11 @@ public class Mascot : MonoBehaviour
     void Die()
     {
         onDeath.NotifyListeners();
+    }
+
+    void OnDrawGizmos()
+    {
+        if(Application.isEditor)
+            mascotPosition.SetMascotPosition(this);
     }
 }
