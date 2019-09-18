@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyTime: 1
   points: 0
-  comboIterator: {fileID: 0}
+  comboIterator: {fileID: 11400000, guid: 7b33aa14ec4209745a346bfa1b21ad7c, type: 2}
 --- !u!23 &754699336375227034
 MeshRenderer:
   m_ObjectHideFlags: 0

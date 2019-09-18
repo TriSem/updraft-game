@@ -9,9 +9,12 @@ public class FloatingText : MonoBehaviour
 
     //public GameObject pickupPrefab;
     [SerializeField] float destroyTime = 1f;
-    [SerializeField] int points = 0;
     [SerializeField] IntSO comboIterator = null;
+
+    int points = 0;
     Animator anim;
+
+    public int Points { get => points; set => points = value; }
 
     // Start is called before the first frame update
     void Start()
