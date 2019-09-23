@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
         speed = startingSpeed;    
     } 
 
-    // Update is called once per frame
     void Update()
     {
         ChangeSpeed();
