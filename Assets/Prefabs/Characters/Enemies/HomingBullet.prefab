@@ -4767,7 +4767,7 @@ MonoBehaviour:
   pauseDistance: 0
   pauseTime: 0
   mascotPosition: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9, type: 2}
-  lerpFactor: 0.5
+  steeringFactor: 0.05
 --- !u!1001 &2996524907804697186
 PrefabInstance:
   m_ObjectHideFlags: 0

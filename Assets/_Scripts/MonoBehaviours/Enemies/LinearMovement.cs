@@ -23,7 +23,8 @@ public class LinearMovement : MonoBehaviour
         Gizmos.DrawRay(transform.position, transform.right * gizmoLength);
     }
 
-    // Moves in a straight line.
+    // Moves in a straight line. 
+    // Pauses at certain intervals for a specified amount of time.
     protected void Move()
     {
         if(remainingPause > 0)

@@ -5,7 +5,10 @@ public class Patrol : MonoBehaviour
 {
     [SerializeField] List<Vector3> patrolPoints = null;
     [SerializeField] float speed = 1f;
+    [Tooltip("The time that the object waits after it reaches a patrol point.")]
     [SerializeField] float pauseTime = 0f;
+
+    [Tooltip("The color that the patrol path will be visualized in.")]
     [SerializeField] Color gizmoColor = Color.black;
 
     int nextPatrolPoint = 0;

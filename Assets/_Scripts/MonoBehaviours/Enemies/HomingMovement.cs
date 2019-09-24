@@ -5,8 +5,9 @@ using UnityEngine;
 public sealed class HomingMovement : LinearMovement
 {
     [SerializeField] MascotPosition mascotPosition = null;
-    [Range(0f, 0.5f)]
-    [SerializeField] float lerpFactor = 0f;
+
+    [Tooltip("Determines how strongly the object will home in on its target.")]
+    [Range(0f, 0.5f)][SerializeField] float steeringFactor = 0.05f;
 
     void Update()
     {
@@ -26,7 +27,7 @@ public sealed class HomingMovement : LinearMovement
             transform.right = Vector3.Lerp(
                 transform.right, 
                 towardsPlayer, 
-                lerpFactor).normalized;
+                steeringFactor).normalized;
         }
     }
 }

@@ -1,13 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    [Tooltip("A shot will be spawned for each direction.")]
     [SerializeField] List<Vector3> shotDirections = null;
-    [SerializeField] LinearMovement projectile = null;
+
+    [SerializeField] Transform projectile = null;
+
+    [Tooltip("The amount of seconds in between spawns.")]
     [SerializeField] float spawnRate = 1f;
 
+    [Tooltip("Determines how many units the prefabs are spawned away from the cannon.")]
+    [SerializeField] float spawnDistance = 2f;
 
     float remainingCooldown = 0f;
 
@@ -27,12 +32,17 @@ public class Cannon : MonoBehaviour
         }
         else
         {
-            foreach(var direction in shotDirections)
-            {
-                LinearMovement instance = Instantiate(projectile, transform.position, Quaternion.identity);
-                instance.transform.right = direction;
-            }
+            Shoot();
             remainingCooldown = spawnRate;
         }
+    }
+
+    void Shoot()
+    {
+        foreach(var direction in shotDirections)
+            {
+                Transform instance = Instantiate(projectile, transform.position + direction * 5, Quaternion.identity);
+                instance.transform.right = direction;
+            }
     }
 }
