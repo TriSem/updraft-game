@@ -8,14 +8,17 @@ public class LinearMovement : MonoBehaviour
     [SerializeField] protected float speed = 0f;
 
     [SerializeField] protected float gizmoLength = 4f;
+    [SerializeField] protected float pauseDistance = 0f;
+    [SerializeField] protected float pauseTime = 0f;
 
-    // Start is called before the first frame update
+    float remainingPause = 0f;
+    float traveledDistance = 0f;
+
     void Start()
     {
         AlignToDirection();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -30,6 +33,25 @@ public class LinearMovement : MonoBehaviour
     protected void AlignToDirection() => transform.right = direction;
 
     // Moves in a straight line.
-    protected void Move() => transform.position += direction.normalized * speed * Time.deltaTime;
-    
+    protected void Move()
+    {
+        if(remainingPause > 0)
+        {
+            remainingPause -= Time.deltaTime;
+            remainingPause = Mathf.Max(0, remainingPause);
+            return;
+        }
+
+        Vector3 velocity = direction.normalized * speed * Time.deltaTime;
+        if(pauseDistance > 0)
+        {
+            traveledDistance += Vector3.Magnitude(velocity);
+            if(traveledDistance >= pauseDistance)
+            {
+                remainingPause = pauseTime;
+                traveledDistance = 0f;
+            }
+        }
+        transform.position += direction.normalized * speed * Time.deltaTime;
+    }
 }
