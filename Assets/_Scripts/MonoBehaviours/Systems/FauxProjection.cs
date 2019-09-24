@@ -11,7 +11,7 @@ public class FauxProjection : MonoBehaviour
     void Update()
     {
         float z = transform.position.z;
-        float scale = Mathf.Lerp(maxScale, minScale, z / farZ);
+        float scale = Mathf.Lerp(maxScale, minScale, (z - nearZ) / (farZ - nearZ));
         transform.localScale = Vector3.one * scale;
     }
 
