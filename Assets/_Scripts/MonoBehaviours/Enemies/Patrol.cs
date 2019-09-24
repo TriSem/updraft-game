@@ -6,6 +6,7 @@ public class Patrol : MonoBehaviour
     [SerializeField] List<Vector3> patrolPoints = null;
     [SerializeField] float speed = 1f;
     [SerializeField] float pauseTime = 0f;
+    [SerializeField] Color gizmoColor = Color.black;
 
     int nextPatrolPoint = 0;
     float remainingPause = 0f;
@@ -51,5 +52,17 @@ public class Patrol : MonoBehaviour
     void UpdateMoveDirection()
     {
         moveDirection = (patrolPoints[nextPatrolPoint] - transform.position).normalized;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        patrolPoints[0] = transform.position;
+        Gizmos.color = gizmoColor;
+        for(int i = 0; i < patrolPoints.Count; i++)
+        {
+            Vector3 point = patrolPoints[i];
+            Gizmos.DrawSphere(point, 0.2f);
+            Gizmos.DrawLine(point, patrolPoints[(i + 1) % patrolPoints.Count]);
+        }
     }
 }
