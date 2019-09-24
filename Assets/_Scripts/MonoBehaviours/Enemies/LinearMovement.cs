@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LinearMovement : MonoBehaviour
 {
-    [SerializeField] protected Vector3 direction = Vector3.zero;
     [SerializeField] protected float speed = 0f;
 
     [SerializeField] protected float gizmoLength = 4f;
@@ -14,11 +13,6 @@ public class LinearMovement : MonoBehaviour
     float remainingPause = 0f;
     float traveledDistance = 0f;
 
-    void Start()
-    {
-        AlignToDirection();
-    }
-
     void Update()
     {
         Move();
@@ -26,11 +20,8 @@ public class LinearMovement : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        AlignToDirection();
-        Gizmos.DrawRay(transform.position, direction * gizmoLength);
+        Gizmos.DrawRay(transform.position, transform.right * gizmoLength);
     }
-
-    protected void AlignToDirection() => transform.right = direction;
 
     // Moves in a straight line.
     protected void Move()
@@ -42,7 +33,7 @@ public class LinearMovement : MonoBehaviour
             return;
         }
 
-        Vector3 velocity = direction.normalized * speed * Time.deltaTime;
+        Vector3 velocity = transform.right * speed * Time.deltaTime;
         if(pauseDistance > 0)
         {
             traveledDistance += Vector3.Magnitude(velocity);
@@ -52,6 +43,6 @@ public class LinearMovement : MonoBehaviour
                 traveledDistance = 0f;
             }
         }
-        transform.position += direction.normalized * speed * Time.deltaTime;
+        transform.position += velocity;
     }
 }

@@ -4762,11 +4762,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2f4f91e5aede14b80ee88723794020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0, z: 0}
   speed: 4
   gizmoLength: 4
+  pauseDistance: 0
+  pauseTime: 0
   mascotPosition: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9, type: 2}
-  lerpFactor: 0.15
+  lerpFactor: 0.5
 --- !u!1001 &2996524907804697186
 PrefabInstance:
   m_ObjectHideFlags: 0
