@@ -30,6 +30,5 @@ public class ComboTimer : MonoBehaviour
         {
             comboIterator.value = 1;
         }
-        //Debug.Log("Remaining ComboTime: " + remainingTime.value);
     }
 }

@@ -6,21 +6,18 @@ using TMPro;
 
 public class ComboBar : MonoBehaviour
 {
-    // Unity UI References
     Slider slider;
-    [SerializeField] TMP_Text comboText;
+    [SerializeField] TMP_Text comboText = null;
     [SerializeField] FloatSO remainingTime = null;
     [SerializeField] IntSO comboIterator = null;
-    [SerializeField] Image fill;
+    [SerializeField] Image fill = null;
     int currentComboCount = 1;
 
     private void Start()
     {
         slider = GetComponent<Slider>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(currentComboCount != comboIterator.value)
@@ -32,10 +29,8 @@ public class ComboBar : MonoBehaviour
         {
             fill.color = new Color(0.1f, 0.05f, 0.05f);
         }
-        
         slider.value = remainingTime.value;
         comboText.text = "X" + comboIterator.value;
-        
     }
 
     void changeFillColor()
