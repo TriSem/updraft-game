@@ -5,17 +5,10 @@ using UnityEngine;
 public sealed class HomingMovement : LinearMovement
 {
     [SerializeField] MascotPosition mascotPosition = null;
-    [Range(0f, 1f)]
-    [SerializeField] float lerpFactor = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        AlignToDirection();
-        direction.Normalize();
-    }
+    [Tooltip("Determines how strongly the object will home in on its target.")]
+    [Range(0f, 0.5f)][SerializeField] float steeringFactor = 0.05f;
 
-    // Update is called once per frame
     void Update()
     {
         AdjustTrajectory();
@@ -27,14 +20,14 @@ public sealed class HomingMovement : LinearMovement
     void AdjustTrajectory()
     {
         var targetPositition = mascotPosition.Position;
-        if(targetPositition.x > transform.position.x * Mathf.Sign(direction.x))
+        if(targetPositition.x < transform.position.x)
         {
             var towardsPlayer = targetPositition - transform.position;
             towardsPlayer.Normalize();
-            direction.y = Vector3.Lerp(
-                direction, 
+            transform.right = Vector3.Lerp(
+                transform.right, 
                 towardsPlayer, 
-                lerpFactor).normalized.y;
+                steeringFactor).normalized;
         }
     }
 }

@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class LinearMovement : MonoBehaviour
 {
-    [SerializeField] protected Vector3 direction = Vector3.zero;
     [SerializeField] protected float speed = 0f;
 
     [SerializeField] protected float gizmoLength = 4f;
+    [SerializeField] protected float pauseDistance = 0f;
+    [SerializeField] protected float pauseTime = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        AlignToDirection();
-    }
+    float remainingPause = 0f;
+    float traveledDistance = 0f;
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -23,13 +20,30 @@ public class LinearMovement : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        AlignToDirection();
-        Gizmos.DrawRay(transform.position, direction * gizmoLength);
+        Gizmos.DrawRay(transform.position, transform.right * gizmoLength);
     }
 
-    protected void AlignToDirection() => transform.right = direction;
+    // Moves in a straight line. 
+    // Pauses at certain intervals for a specified amount of time.
+    protected void Move()
+    {
+        if(remainingPause > 0)
+        {
+            remainingPause -= Time.deltaTime;
+            remainingPause = Mathf.Max(0, remainingPause);
+            return;
+        }
 
-    // Moves in a straight line.
-    protected void Move() => transform.position += direction.normalized * speed * Time.deltaTime;
-    
+        Vector3 velocity = transform.right * speed * Time.deltaTime;
+        if(pauseDistance > 0)
+        {
+            traveledDistance += Vector3.Magnitude(velocity);
+            if(traveledDistance >= pauseDistance)
+            {
+                remainingPause = pauseTime;
+                traveledDistance = 0f;
+            }
+        }
+        transform.position += velocity;
+    }
 }

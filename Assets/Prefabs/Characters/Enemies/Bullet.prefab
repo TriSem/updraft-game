@@ -4762,9 +4762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84382e3ba7b6ba47a4b69b02d4ad32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0, z: 0}
   speed: 5
   gizmoLength: 4
+  pauseDistance: 0
+  pauseTime: 0
 --- !u!1001 &34021263167382491
 PrefabInstance:
   m_ObjectHideFlags: 0
