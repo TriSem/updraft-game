@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour
     [SerializeField] FloatSO remainingComboTime = null;
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] int value = 0;
+    [SerializeField] Color color = new Color();
 
 
     void OnTriggerEnter()
@@ -21,6 +22,7 @@ public class Pickup : MonoBehaviour
         {
             var instance = Instantiate(floatingTextPrefab, transform.position + new Vector3(0f,2f,0f), floatingTextPrefab.transform.rotation);
             instance.GetComponent<FloatingText>().Points = value;
+            instance.GetComponent<FloatingText>().Color = color;
         }
         int bonus = value;
 
@@ -29,9 +31,13 @@ public class Pickup : MonoBehaviour
             comboIterator.value++;
             bonus = value * comboIterator.value;
         }
-
+        else
+        {
+            comboIterator.value = 1;
+        }
         playerScore.value += bonus;
         remainingComboTime.value = comboResetTime;
+
         playerScoreChange.NotifyListeners();
         Destroy(this.gameObject);
     }

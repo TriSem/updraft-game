@@ -6,6 +6,10 @@ public class ComboTimer : MonoBehaviour
 {
     [SerializeField] FloatSO remainingTime = null;
 
+    private void Start()
+    {
+        remainingTime.value = 0;
+    }
     void StartTimer(float duration)
     {
         remainingTime.value = duration;
@@ -18,5 +22,6 @@ public class ComboTimer : MonoBehaviour
             remainingTime.value -= Time.deltaTime;
             remainingTime.value = Mathf.Max(remainingTime.value, 0);
         }
+        Debug.Log("Remaining ComboTime: " + remainingTime.value);
     }
 }
