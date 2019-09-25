@@ -24,7 +24,8 @@ public class FloatingText : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.Play("FloatingText");
         GetComponent<TextMesh>().color = Color;
-        GetComponent<TextMesh>().text = comboIterator.value.ToString() + " X " +  points.ToString() ;
+       // GetComponent<TextMesh>().text = comboIterator.value.ToString() + " X " +  points.ToString() ;
+        GetComponent<TextMesh>().text =  points.ToString() ;
         Destroy(gameObject, destroyTime);
     }
 }

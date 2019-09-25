@@ -13,30 +13,38 @@ public class Pickup : MonoBehaviour
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] int value = 0;
     [SerializeField] Color color = new Color();
+    [SerializeField] BoolSO firstPickup = null;
 
 
     void OnTriggerEnter()
     {
-
-        if (floatingTextPrefab)
-        {
-            var instance = Instantiate(floatingTextPrefab, transform.position + new Vector3(0f,2f,0f), floatingTextPrefab.transform.rotation);
-            instance.GetComponent<FloatingText>().Points = value;
-            instance.GetComponent<FloatingText>().Color = color;
-        }
         int bonus = value;
-
-        if (remainingComboTime.value > 0)
+        if(firstPickup.value)
         {
+            bonus = value;
             comboIterator.value++;
+            firstPickup.value = false;
+        }
+        else if(remainingComboTime.value > 0)
+        {
             bonus = value * comboIterator.value;
+            comboIterator.value++;
         }
         else
         {
             comboIterator.value = 1;
+            firstPickup.value = true;
         }
         playerScore.value += bonus;
         remainingComboTime.value = comboResetTime;
+
+        if (floatingTextPrefab)
+        {
+            var instance = Instantiate(floatingTextPrefab, transform.position + new Vector3(0f,2f,0f), floatingTextPrefab.transform.rotation);
+            instance.GetComponent<FloatingText>().Points = bonus;
+            instance.GetComponent<FloatingText>().Color = color;
+        }
+        
 
         playerScoreChange.NotifyListeners();
         Destroy(this.gameObject);

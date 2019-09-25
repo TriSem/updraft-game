@@ -5,10 +5,14 @@ using UnityEngine;
 public class ComboTimer : MonoBehaviour
 {
     [SerializeField] FloatSO remainingTime = null;
+    [SerializeField] IntSO comboIterator = null;
+    [SerializeField] BoolSO firstPickup = null;
 
     private void Start()
     {
         remainingTime.value = 0;
+        comboIterator.value = 1;
+        firstPickup.value = true;
     }
     void StartTimer(float duration)
     {
@@ -22,6 +26,10 @@ public class ComboTimer : MonoBehaviour
             remainingTime.value -= Time.deltaTime;
             remainingTime.value = Mathf.Max(remainingTime.value, 0);
         }
-        Debug.Log("Remaining ComboTime: " + remainingTime.value);
+        else
+        {
+            comboIterator.value = 1;
+        }
+        //Debug.Log("Remaining ComboTime: " + remainingTime.value);
     }
 }
