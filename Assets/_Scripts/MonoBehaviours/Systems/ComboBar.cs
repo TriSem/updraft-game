@@ -13,7 +13,6 @@ public class ComboBar : MonoBehaviour
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] Image fill;
     int currentComboCount = 1;
-    bool comboHasChanged = false;
 
     private void Start()
     {
