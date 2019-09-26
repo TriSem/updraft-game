@@ -12,6 +12,7 @@ public class ComboBar : MonoBehaviour
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] Image fill = null;
     [SerializeField] FloatSO comboResetTime = null;
+    [SerializeField] Color comboStartColor;
     int currentComboCount = 1;
 
     private void Start()
@@ -25,17 +26,17 @@ public class ComboBar : MonoBehaviour
         if(currentComboCount != comboIterator.value)
         {
             currentComboCount = comboIterator.value;
-            changeFillColor();
+            brightenFillColor();
         }
         else if(currentComboCount == 1)
         {
-            fill.color = new Color(0.1f, 0.05f, 0.05f);
+            fill.color = comboStartColor;
         }
         slider.value = remainingTime.value;
         comboText.text = "X" + comboIterator.value;
     }
 
-    void changeFillColor()
+    void brightenFillColor()
     {
         Color currentColor = fill.color;
         float newRed = currentColor.r * 1.5f;
