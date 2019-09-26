@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] static float comboResetTime = 2f;
+    [SerializeField] static float comboResetTime = 0f;
 
     [SerializeField] IntSO playerScore = null;
     [SerializeField] GameEvent playerScoreChange = null;
@@ -14,8 +14,13 @@ public class Pickup : MonoBehaviour
     [SerializeField] int value = 0;
     [SerializeField] Color color = new Color();
     [SerializeField] BoolSO firstPickup = null;
+    [SerializeField] FloatSO comboResetTimeSo = null;
 
 
+    private void Start()
+    {
+        comboResetTime = comboResetTimeSo.value;
+    }
     void OnTriggerEnter()
     {
         int bonus = value;

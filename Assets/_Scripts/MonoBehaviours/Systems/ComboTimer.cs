@@ -7,12 +7,15 @@ public class ComboTimer : MonoBehaviour
     [SerializeField] FloatSO remainingTime = null;
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] BoolSO firstPickup = null;
+    [SerializeField] FloatSO comboResetTimeSO = null;
+    [SerializeField] float comboResetTime = 0;
 
     private void Start()
     {
         remainingTime.value = 0;
         comboIterator.value = 1;
         firstPickup.value = true;
+        comboResetTimeSO.value = comboResetTime;
     }
     void StartTimer(float duration)
     {

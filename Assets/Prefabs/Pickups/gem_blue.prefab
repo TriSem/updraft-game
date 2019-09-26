@@ -100,6 +100,7 @@ MonoBehaviour:
   value: 20
   color: {r: 0.24705884, g: 0.5411765, b: 1, a: 1}
   firstPickup: {fileID: 11400000, guid: 393a2c8b3c5e4f64f970d905709abb88, type: 2}
+  comboResetTimeSo: {fileID: 11400000, guid: 4b78fb3d8f2c88948b3a0e802e66dcb7, type: 2}
 --- !u!64 &8276615496897423806
 MeshCollider:
   m_ObjectHideFlags: 0

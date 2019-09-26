@@ -533,6 +533,7 @@ MonoBehaviour:
   remainingTime: {fileID: 11400000, guid: 5ed20db883774c54b93f2c3b1f5d33e7, type: 2}
   comboIterator: {fileID: 11400000, guid: 7b33aa14ec4209745a346bfa1b21ad7c, type: 2}
   fill: {fileID: 1016095175723546638}
+  comboResetTime: {fileID: 11400000, guid: 4b78fb3d8f2c88948b3a0e802e66dcb7, type: 2}
 --- !u!1 &1016095175723546632
 GameObject:
   m_ObjectHideFlags: 0

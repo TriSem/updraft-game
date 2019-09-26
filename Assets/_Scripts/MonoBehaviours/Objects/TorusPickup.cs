@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TorusPickup : MonoBehaviour
 {
-    [SerializeField] static float comboResetTime = 2f;
+    [SerializeField] static float comboResetTime = 0f;
 
     [SerializeField] IntSO playerScore = null;
     [SerializeField] GameEvent playerScoreChange = null;
@@ -15,10 +15,12 @@ public class TorusPickup : MonoBehaviour
     [SerializeField] Color color = new Color();
     [SerializeField] BoolSO firstPickup = null;
     [SerializeField] BoolSO firstHit = null;
+    [SerializeField] FloatSO comboResetTimeSO= null;
 
     void Start()
     {
         firstHit.value = false;
+        comboResetTime = comboResetTimeSO.value;
     }
 
     void OnTriggerEnter()

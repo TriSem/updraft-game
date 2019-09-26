@@ -11,11 +11,13 @@ public class ComboBar : MonoBehaviour
     [SerializeField] FloatSO remainingTime = null;
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] Image fill = null;
+    [SerializeField] FloatSO comboResetTime = null;
     int currentComboCount = 1;
 
     private void Start()
     {
         slider = GetComponent<Slider>();
+        slider.maxValue = comboResetTime.value;
     }
 
     void Update()
