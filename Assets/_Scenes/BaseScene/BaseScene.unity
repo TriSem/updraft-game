@@ -722,6 +722,8 @@ MonoBehaviour:
   remainingTime: {fileID: 11400000, guid: 5ed20db883774c54b93f2c3b1f5d33e7, type: 2}
   comboIterator: {fileID: 11400000, guid: 7b33aa14ec4209745a346bfa1b21ad7c, type: 2}
   firstPickup: {fileID: 11400000, guid: 393a2c8b3c5e4f64f970d905709abb88, type: 2}
+  comboResetTimeSO: {fileID: 11400000, guid: 4b78fb3d8f2c88948b3a0e802e66dcb7, type: 2}
+  comboResetTime: 3
 --- !u!1001 &1016095175663230787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +845,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016095175723546639, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016095175201752365, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016095175201752364, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: comboResetTime
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b78fb3d8f2c88948b3a0e802e66dcb7,
+        type: 2}
+    - target: {fileID: 1016095175201752364, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: comboStartColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016095175201752364, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: comboStartColor.g
+      value: 0.0012514095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016095175201752364, guid: 4f84237c47ec87743a1c70626a34c1c9,
+        type: 3}
+      propertyPath: comboStartColor.b
+      value: 0.02745098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f84237c47ec87743a1c70626a34c1c9, type: 3}
@@ -976,6 +1009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302873667397301529, guid: e821afdb94f11634f99db7a78f333cbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6302873667397301526, guid: e821afdb94f11634f99db7a78f333cbb,
         type: 3}
