@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class RapidAttack : MonoBehaviour
@@ -8,7 +6,7 @@ public class RapidAttack : MonoBehaviour
     [Tooltip("Amount of time before the attacker charges.")]
     [SerializeField] float chargeTime = 3f;
     [SerializeField] float speed = 20f;
-    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] LineRenderer lineRenderer = null;
 
     float timePassed = 0f;
     Vector3 direction;

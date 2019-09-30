@@ -41,7 +41,7 @@ public class Cannon : MonoBehaviour
     {
         foreach(var direction in shotDirections)
             {
-                Transform instance = Instantiate(projectile, transform.position + direction * 5, Quaternion.identity);
+                Transform instance = Instantiate(projectile, transform.position + direction * spawnDistance, Quaternion.identity);
                 instance.transform.right = direction;
             }
     }
