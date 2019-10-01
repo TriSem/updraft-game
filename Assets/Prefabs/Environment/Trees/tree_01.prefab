@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 617756920850739689}
   - component: {fileID: 3590638343880622551}
   - component: {fileID: 7185928033112029072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1163066043541218919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tree_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 5364738027334195393}
   - component: {fileID: 5799618254575804420}
   - component: {fileID: 2069304234988848266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
