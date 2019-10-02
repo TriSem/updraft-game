@@ -9938,6 +9938,35 @@ MonoBehaviour:
   risingTunnelAirResistance: 1
   isInTunnel: {fileID: 11400000, guid: e65e78c11c7887d418f54753377e7f85, type: 2}
   mascotPosition: {fileID: 11400000, guid: d4c77e12f6c167f49885ca1ab9f3f3f9, type: 2}
+--- !u!114 &7888807938389206749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754155101599131188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cc78330752134d8b82f520eb4bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 69eef8aa2106d5e4197c38191167ce21, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5f37aff2ec1e86c4eacf1467f2781f17, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &3358129864358641469
 PrefabInstance:
   m_ObjectHideFlags: 0

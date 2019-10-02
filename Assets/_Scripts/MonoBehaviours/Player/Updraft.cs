@@ -21,6 +21,8 @@ public class Updraft : MonoBehaviour
     // the drift before downwards velocity is killed.
     [SerializeField] float maxPenetrationRatio = 0f;
 
+     static float spacebarHeight = -0.5f;
+
     public float Height
     {
         get 
@@ -40,7 +42,8 @@ public class Updraft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AdjustSize();
+        //AdjustSize();
+        AdjustSizeWithSpace();
     }
 
     void OnTriggerStay(Collider other)
@@ -81,5 +84,28 @@ public class Updraft : MonoBehaviour
         float penetrationRatio = 1 - Mathf.Lerp(minPenetrationRatio, maxPenetrationRatio, lerpFactor);
         float stopLine = windbox.bounds.min.y + Height * penetrationRatio;
         return t.position.y < stopLine;
+    }
+
+    void changeHeightWithSpace()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            spacebarHeight += 1f;
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            spacebarHeight -= 1f;
+        }
+    }
+
+    void AdjustSizeWithSpace()
+    {
+        changeHeightWithSpace();
+        float nextScale = transform.localScale.y +
+            (Time.deltaTime * resizeSpeed * spacebarHeight);
+        float nextHeight = Height * nextScale / transform.localScale.y;
+        nextScale = Mathf.Clamp(nextScale, minHeight / (nextHeight / nextScale), maxHeight / (nextHeight / nextScale));
+        transform.position = new Vector3(transform.position.x, startingHeight + nextScale - 1, transform.position.z);
+        transform.localScale = new Vector3(transform.localScale.x, nextScale, transform.localScale.z);
     }
 }
