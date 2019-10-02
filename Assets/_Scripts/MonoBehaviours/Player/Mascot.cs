@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mascot : MonoBehaviour
 {
-    public GameEvent onDeath;
+    [SerializeField] GameEvent onDeath = null;
 
     [SerializeField] float fallSpeedFactor = 0f;
     [SerializeField] float fallingAirResistance = 0f;

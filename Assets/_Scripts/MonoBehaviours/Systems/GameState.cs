@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
     [SerializeField] IntSO playerScore = null;
     [SerializeField] GameEvent playerScoreChange = null;
+    [SerializeField] GameObject scoreText = null;
+    [SerializeField] GameObject comboSlider = null;
 
     void OnEnable()
     {
@@ -15,12 +14,21 @@ public class GameState : MonoBehaviour
 
     public void BeginPlay()
     {
+        scoreText.SetActive(true);
+        comboSlider.SetActive(true);
         playerScore.value = 0;
         playerScoreChange.NotifyListeners();
     }
 
     public void OnLevelCleared()
     {
-        // TODO: Add functionality
+        scoreText.SetActive(false);
+        comboSlider.SetActive(false);
+    }
+
+    public void OnPlayerDeath()
+    {
+        scoreText.SetActive(false);
+        comboSlider.SetActive(false);
     }
 }

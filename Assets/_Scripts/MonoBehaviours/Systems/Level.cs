@@ -73,7 +73,6 @@ public class Level : MonoBehaviour
         currentlyLoadedLevel = levelName;
         loadScreen.SetActive(false);
         controlsEnabled.value = true;
-        gameState.gameObject.SetActive(true);
     }
 
     public void OnLevelSelected()
@@ -82,6 +81,7 @@ public class Level : MonoBehaviour
             return;
 
         Load("Level " + selectedLevelDesignation.value);
+        gameState.gameObject.SetActive(true);
     }
 
     public void OnPlayerDeath()

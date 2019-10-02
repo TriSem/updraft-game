@@ -33,7 +33,7 @@ public class ComboBar : MonoBehaviour
             fill.color = comboStartColor;
         }
         slider.value = remainingTime.value;
-        comboText.text = "X" + comboIterator.value;
+        comboText.text = "Combo: x" + comboIterator.value;
     }
 
     void brightenFillColor()
@@ -42,6 +42,6 @@ public class ComboBar : MonoBehaviour
         float newRed = currentColor.r * 1.5f;
         float newGreen = currentColor.g * 1.5f;
         float newBlue = currentColor.b * 1.5f;
-        fill.color = new Color(newRed, newGreen, newBlue);
+        fill.color = new Color(newRed, newGreen, newBlue, 0.2f);
     }
 }

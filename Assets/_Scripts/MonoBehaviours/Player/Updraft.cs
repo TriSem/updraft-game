@@ -21,7 +21,7 @@ public class Updraft : MonoBehaviour
     // the drift before downwards velocity is killed.
     [SerializeField] float maxPenetrationRatio = 0f;
 
-     static float spacebarHeight = -0.5f;
+    float spacebarHeight = 0f;
 
     public float Height
     {
@@ -90,14 +90,17 @@ public class Updraft : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            spacebarHeight += 1f;
+            spacebarHeight = 1f;
         }
         if (Input.GetKeyUp("space"))
         {
-            spacebarHeight -= 1f;
+            spacebarHeight = -1f;
         }
     }
 
+    // Alternative control scheme. 
+    // TODO: Debug an issue, where the height does
+    // not change after loading into a level.
     void AdjustSizeWithSpace()
     {
         changeHeightWithSpace();
