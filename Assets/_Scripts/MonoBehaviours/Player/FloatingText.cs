@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FloatingText : MonoBehaviour
 {
     [SerializeField] float destroyTime = 1f;
-    [SerializeField] IntSO comboIterator = null;
 
     int points = 0;
     Color color = new Color();

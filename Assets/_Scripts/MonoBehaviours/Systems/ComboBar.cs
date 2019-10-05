@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -12,7 +10,7 @@ public class ComboBar : MonoBehaviour
     [SerializeField] IntSO comboIterator = null;
     [SerializeField] Image fill = null;
     [SerializeField] FloatSO comboResetTime = null;
-    [SerializeField] Color comboStartColor;
+    [SerializeField] Color comboStartColor = Color.white;
     int currentComboCount = 1;
 
     private void Start()

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+// Shoots projectiles in the specified directions.
 public class Cannon : MonoBehaviour
 {
     [Tooltip("A shot will be spawned for each direction.")]

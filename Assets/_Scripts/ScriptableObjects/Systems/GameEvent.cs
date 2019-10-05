@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// This class was taken from the following Article
+// on Unity's website: 
+// https://unity3d.com/de/how-to/architect-with-scriptable-objects (last called 10/05/19)
+
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// Turns enemies on and off depending on
+// their distance to the player.
 public class ActivationRange : MonoBehaviour
 {
     [SerializeField] Vector2 rectangleSize = new Vector2(10f, 10f); 

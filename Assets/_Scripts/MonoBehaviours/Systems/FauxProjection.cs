@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+// Fakes a projection effect on objects
+// that are supposed to rendered by an
+// orthographic camera
 public class FauxProjection : MonoBehaviour
 {
     [SerializeField] float nearZ = 0f;

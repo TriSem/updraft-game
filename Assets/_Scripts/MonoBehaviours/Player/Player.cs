@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// Controls the unit of mascot and updraft.
 public class Player : MonoBehaviour
 {
-    GameEventListener listener;
 
     [SerializeField] float maxSpeed = 6f;
     [SerializeField] float minSpeed = 1f;
@@ -24,7 +22,7 @@ public class Player : MonoBehaviour
         transform.position += Vector3.right * Speed * Time.deltaTime;
     }
 
-
+    // Change speed at the rate of change.
     void ChangeSpeed()
     {
         float accelDirection = Input.GetAxisRaw("Horizontal");
