@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Updraft : MonoBehaviour
 {
     BoxCollider windbox;
@@ -37,11 +38,10 @@ public class Updraft : MonoBehaviour
         startingHeight = transform.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //AdjustSize();
-        AdjustSizeWithSpace();
+        AdjustSize();
+        // AdjustSizeWithSpace();
     }
 
     void OnTriggerStay(Collider other)
@@ -97,8 +97,6 @@ public class Updraft : MonoBehaviour
     }
 
     // Alternative control scheme. 
-    // TODO: Debug an issue, where the height does
-    // not change after loading into a level.
     void AdjustSizeWithSpace()
     {
         changeHeightWithSpace();
